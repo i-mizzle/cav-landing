@@ -48,10 +48,18 @@ export default function OpenGraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 980 }}>
-          <div style={{ fontSize: 72, lineHeight: 1.05, fontWeight: 800 }}>
-            Content That Gets Attention.
-            <br />
-            Videos That Drive Results.
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 6,
+              fontSize: 72,
+              lineHeight: 1.05,
+              fontWeight: 800,
+            }}
+          >
+            <div style={{ display: "flex" }}>Content That Gets Attention.</div>
+            <div style={{ display: "flex" }}>Videos That Drive Results.</div>
           </div>
           <div style={{ fontSize: 30, color: "#d5d1cd", lineHeight: 1.35 }}>
             Creating Content. Building Influence. Driving Results.
