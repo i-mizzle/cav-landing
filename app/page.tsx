@@ -3,9 +3,56 @@ import RevealOnScroll from "./reveal-on-scroll";
 import { services } from "./services";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cav.ng/#organization",
+        name: "CAV Brand",
+        alternateName: "Chas Able Ventures",
+        url: "https://cav.ng",
+        logo: "https://cav.ng/logo.svg",
+        email: "hello@cav.ng",
+        telephone: "+2348161305358",
+        sameAs: [
+          "https://www.instagram.com/cavshotit?igsh=MXFpbmV0cXFjaHFmdQ%3D%3D&utm_source=qr",
+          "https://www.tiktok.com/@cav.shotit?_r=1&_t=ZS-96s9woTo4nd",
+          "https://youtube.com/@cav_brand?si=o6DAdrO0TmsJnLlx",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cav.ng/#website",
+        url: "https://cav.ng",
+        name: "CAV Brand",
+        publisher: {
+          "@id": "https://cav.ng/#organization",
+        },
+        inLanguage: "en-NG",
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://cav.ng/#service",
+        name: "CAV Brand",
+        description:
+          "Video production, content strategy, event coverage, and social-media-ready branded content for businesses, creators, and organizations.",
+        url: "https://cav.ng",
+        areaServed: "Nigeria",
+        provider: {
+          "@id": "https://cav.ng/#organization",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-(--cav-bg) text-(--cav-text)">
       <RevealOnScroll />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(246,200,53,0.15),transparent_26%),radial-gradient(circle_at_88%_85%,rgba(157,98,20,0.14),transparent_28%),linear-gradient(180deg,#0b0c0c_0%,#0d0e0e_52%,#0b0c0c_100%)]" />
         <div className="cav-drift cav-drift-a absolute -left-20 top-16 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(246,200,53,0.2)_0%,rgba(246,200,53,0)_72%)]" />
